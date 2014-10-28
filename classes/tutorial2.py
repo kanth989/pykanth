@@ -75,7 +75,7 @@ class Student(object):
 # 'teacher' list is declared in constructor making it only particular to an instance
 # but 'all_teachers' set is declared as a local variable out of class-definitions making possible for all instances.
 
-siva = Student('siva',18,1090)
+siva = Student('siva',18,1090) # passing name, age, rno respectively to Student hence creating a siva instance.
 seeta = Student('seeta',19,1192)
 siva.add_teacher('Mr.Hanuman') # siva's  teachers
 siva.add_teacher('Mr.Ravan')
