@@ -94,7 +94,7 @@ No need to specify the data type of any variable at any time;
  Lets check that 
 '''
  
-
+# Classes:  'class' Keyword is used to declare classes
 class Sample1(): # This class is Old way of declaring class
 	pass 		# 'pass' Keyword means do nothing ; Just skip after entering in a loop, condition, class or function
 
@@ -110,7 +110,39 @@ any text editor will highlight the region of the comment
 
 class Sample2(object): # This is new way of declaring class 
 	pass
-	
+
+# Let's see what is the difference between the Old way and new Way Later when we talk about MRO's 
+# But for now we shall find how classes (New Way) can really help us.
+
+# Lets Consider a real classroom full of students where each has a name , age , rollnumber
+# Always take a class as classroom inorder to understand full conceppt of OOPs 
+# I consider it as best way , all the examples provided here are completely to do with
+# a real classroom  from a school packed with students, teachers, etc.. But do not limit yourself with this.
+# Keep experimenting for a better learning.
 
 
+'''
+Little Intro about OOPs:
+
+Real classroom has specific set of subjects to deal with so goes with
+classes in OOPs but they are called as class-definitions or class-methods or class-functions
+There will be fixed set of subjects for a given classroom. so does a class in OOPs , but 
+they are declared using a constructor. here in python we declare a constructor using 
+specific keyword '__init__' (double-underscore)
+'''
+
+class Student(object):       # Declaring a class;  
+	school = 'Big School Name'  # variables declared outside of class-definitions are locally valid. 
+	def __init__(self, name, age, rno): # Here is a constructor.
+		self.name= name          # here we are assigning object values
+		self.age = age
+		self.rno = rno
+	def print_details(self):
+		print self.name + " Name of the Candidate" # Here we are performing string concatination
+		print self.age, "Age of the Candidate" # here Integer value cannot concatinate with string
+		print str(self.rno)+ " Roll Number of the Candidate" # here we are converting rno to string to perform string concatination
+
+siva = Student('siva',18, 1090)
+# print siva.school, siva.age, siva.rno, siva.print_age()
+print  siva.print_details()
 
