@@ -46,12 +46,12 @@ class Student(object):       # Declaring a class;
 		print self.age, "Age of the Candidate" # here Integer value cannot concatinate with string
 		print str(self.rno)+ " Roll Number of the Candidate" # here we are converting rno to string to perform string concatination
 
-siva = Student('siva',18, 1090) # taking siva as Student Instance. An Instance is just a carrier.
+siva = Student('siva',18, 1090) # taking siva as Student Instance. An Instance is just a carrier of particular class.
 
 print  siva.print_details()
 print siva.age, siva.name,siva.rno, siva.school # here we are making use of constructor.
 # but if i call school variable outside the class, python interpreter will throw error 
-# try it
+# try it by un-commenting 
 # print school
 
 # Abvoe class Student does not do anything big
@@ -60,32 +60,34 @@ print siva.age, siva.name,siva.rno, siva.school # here we are making use of cons
 class Student(object):
 	school = "Big School Name"
 	
-	all_teachers= set() # here we are declaring a set, a data-structure that allows only unique values, unordered in nature
+	all_school_teachers= set() # here we are declaring a set, a data-structure that allows only unique values, unordered in nature
 	def __init__(self, name, age, rno):
 		self.name= name
 		self.age = age
 		self.rno = rno
 		self.teachers = [] # here we are declaring a list; lists are similar to array, they are mutable and we can break and crack them as we wish.
-	def add_teacher(self, Teacher):
-		self.teachers.append(Teacher)
-		self.all_teachers.add(Teacher)
+	def add_teacher(self, Teacher): # here Teacher is a argument that this class definition allows inside
+		self.teachers.append(Teacher) # append is the keyword used to add an element into a list
+		self.all_school_teachers.add(Teacher) # add is the keyword used to add an element into a set
 	
 # Here we are appending Teacher name provided by the class instance into 'teacher' list and 'all_teachers' set
 # Observation: 
 # 'teacher' list is declared in constructor making it only particular to an instance
-# but 'all_teachers' set is declared as a local variable out of class-definitions making possible for all instances.
+# but 'all_teachers' set is declared as a local variable out of class-definitions making possible for all instances to access it.
 
 siva = Student('siva',18,1090) # passing name, age, rno respectively to Student hence creating a siva instance.
 seeta = Student('seeta',19,1192)
 siva.add_teacher('Mr.Hanuman') # siva's  teachers
 siva.add_teacher('Mr.Ravan')
+
 seeta.add_teacher('Mr.Rama')  # seeta's teachers
 seeta.add_teacher('Mr.Lakshman')
 seeta.add_teacher('Mr.Hanuman') # Mr.Hanuman teahces for both seeta and siva 
+
 print siva.teachers
 print seeta.teachers
-print siva.all_teachers  # calling local_variable 
-print seeta.all_teachers  # But all teachers should have only one Mr.Hanuman
+print siva.all_school_teachers  # calling local_variable 
+print seeta.all_school_teachers  # But all teachers should have only one Mr.Hanuman
 
 '''
 Execute this program to see the result set 
