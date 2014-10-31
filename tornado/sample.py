@@ -1,7 +1,7 @@
 import tornado.ioloop
 import tornado.web
 import sqlite3
-
+# add some data in sqlite3 before executing.. 
 import json
 
 def _execute(query):
